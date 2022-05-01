@@ -9,10 +9,10 @@ Build and evaluate several machine learning models to detirmine which model best
 
 ## Challenge Objectives
 Produce the following:
-Deliverable 1: Resampling Models to Predict Credit Risk
-Deliverable 2: The SMOTEENN Algorithm to Predict Credit Risk
-Deliverable 3: Ensemble Classifiers to Predict Credit Risk
-Deliverable 4: A Written Report on the Analysis (README.md)
+- Deliverable 1: Resampling Models to Predict Credit Risk
+- Deliverable 2: The SMOTEENN Algorithm to Predict Credit Risk
+- Deliverable 3: Ensemble Classifiers to Predict Credit Risk
+- Deliverable 4: A Written Report on the Analysis (README.md)
 
 ## Resources
 **Data Sources:** 
@@ -26,53 +26,86 @@ Deliverable 4: A Written Report on the Analysis (README.md)
 - scikit-learn libraries
 -imbalanced-learn libraries
 
-## Results
-### Size of the Data Set
-How many Vine reviews and non-Vine reviews were in the data set?
-- Total Number of Vine Reviews <p align="center">
-    <img src="https://github.com/saraegregg/Mod16_BigData/blob/main/images/total_paid_reviews.png"> 
+## Results 
+
+There is a bulleted list that describes the balanced accuracy score and the precision and recall scores of all six machine learning models
+
+
+### Oversampling-RandomOverSampler
+**Accuracy Score** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/naiverandom_accscore.png"> 
 </p>
 
 <br>
 
-- Total Number of Non-Vine Reviews <p align="center">
-    <img src="https://github.com/saraegregg/Mod16_BigData/blob/main/images/total_unpaid_reviews.png"> 
+**Classification Report** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/naiverandom_report.png"> 
 </p>
 <br>
 
-### 5-Star Reviews
-How many Vine reviews were 5-stars? How many non-Vine reviews were 5 stars?
-- Total Number of Vine Reviews That Awarded 5 Stars <p align="center">
-    <img src="https://github.com/saraegregg/Mod16_BigData/blob/main/images/fivestar_paid_reviews.png"> 
-</p>
 
-<br>
-
-- Total Number of Non-Vine Reviews That Awarded 5 Stars <p align="center">
-    <img src="https://github.com/saraegregg/Mod16_BigData/blob/main/images/fivestar_unpaid_reviews.png"> 
-</p>
-<br>
-
-### 5-Star Review Percents
-What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
-- Percentage of Vine Reviews That Awarded 5 Stars <p align="center">
-    <img src="https://github.com/saraegregg/Mod16_BigData/blob/main/images/percentage_paid_fivestar_reviews.png"> 
+### Oversampling-SMOTE
+**Accuracy Score** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/smote_accscore.png"> 
 </p>
 
 <br>
 
-- Percentage Non-Vine Reviews That Awarded 5 Stars <p align="center">
-    <img src="https://github.com/saraegregg/Mod16_BigData/blob/main/images/percentage_unpaid_fivestar_reviews.png"> 
+**Classification Report** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/smote_report.png"> 
+</p>
+<br>
+
+### Undersampling-ClusterCentroids
+**Accuracy Score** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/undersampling_accscore.png"> 
+</p>
+
+<br>
+
+**Classification Report** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/undersampling_report.png"> 
+</p>
+<br>
+
+### Combinatorial-SMOTEEN
+**Accuracy Score** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/combo_accscore.png"> 
+</p>
+
+<br>
+
+**Classification Report** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/combo_report.png"> 
+</p>
+<br>
+
+
+### Ensamble-BalancedRandomForestClassifier
+**Accuracy Score** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/fandomforest_accscore.png"> 
+</p>
+
+<br>
+
+**Classification Report** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/fandomforest_report.png"> 
+</p>
+<br>
+
+### Ensamble-EasyEnsambleClassifier
+**Accuracy Score** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/easyensamble_accscore.png"> 
+</p>
+
+<br>
+
+**Classification Report** of the model <p align="center">
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/esayensamble_report.png"> 
 </p>
 <br>
 
 ## Summary
-45.6% of the reviews in the Vine program gave 5 stars and the percentage of non-Vine reviews giving 5 stars is slightly higher at 49.3%. These precentages do not provide any evidence to support a positivity bias for the reviews in the Vine program despite the compensation given to the participants, since the numbers are so similar. It could potentially indicate that reviewers participating in the Vine program are more thourough and critical when writing their reviews. The Vine reviews only constitute 0.8% of the overall reviews within the dataset, so further analysis is recommended.
-
-An additional analysis to perform could be of the percentages of paid and unpaid 5-star reviews for lawn and garden products that have less than 20 votes. It is possible that Amazon Vine Members review these items that other shoppers may not be aware of or are willing to risk buying, unsure if the product is what they need or want. This new dataset could increase the number of total Vine reviews, creating a larger data pool to examine how Vine members review products
-
-
-
 
 Accuracy is defined as the percentage of correct predictions (True Positive = True Negative/True Positive+ True Negative+ False Positive + False Negative)
 
