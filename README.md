@@ -31,7 +31,7 @@ Produce the following:
 There is a bulleted list that describes the balanced accuracy score and the precision and recall scores of all six machine learning models
 
 
-### Oversampling-RandomOverSampler
+### MODEL 1 Oversampling-RandomOverSampler
 **Accuracy Score** of the model <p align="center">
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/naiverandom_accscore.png"> 
 </p>
@@ -42,9 +42,9 @@ There is a bulleted list that describes the balanced accuracy score and the prec
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/naiverandom_report.png"> 
 </p>
 <br>
+The classification report shows that the precision score for identifying high-risk loans is 0.01 and the sensitivity is 0.72.
 
-
-### Oversampling-SMOTE
+### MODEL 2 Oversampling-SMOTE
 **Accuracy Score** of the model <p align="center">
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/smote_accuscore.png"> 
 </p>
@@ -55,8 +55,9 @@ There is a bulleted list that describes the balanced accuracy score and the prec
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/smote_report.png"> 
 </p>
 <br>
+The classification report shows that the precision score for identifying high-risk loans is 0.01 and the sensitivity is 0.62.
 
-### Undersampling-ClusterCentroids
+### MODEL 3 Undersampling-ClusterCentroids
 **Accuracy Score** of the model <p align="center">
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/undersampling_accscore.png"> 
 </p>
@@ -67,8 +68,9 @@ There is a bulleted list that describes the balanced accuracy score and the prec
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/undersampling_report.png"> 
 </p>
 <br>
+The classification report shows that the precision score for identifying high-risk loans is 0.01 and the sensitivity is 0.69.
 
-### Combinatorial-SMOTEEN
+### MODEL 4 Combinatorial-SMOTEEN
 **Accuracy Score** of the model <p align="center">
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/combo_accscore.png"> 
 </p>
@@ -79,9 +81,9 @@ There is a bulleted list that describes the balanced accuracy score and the prec
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/combo_report.png"> 
 </p>
 <br>
+The classification report shows that the precision score for identifying high-risk loans is 0.01 and the sensitivity is 0.77.
 
-
-### Ensamble-BalancedRandomForestClassifier
+### MODEL 5 Ensamble-BalancedRandomForestClassifier
 **Accuracy Score** of the model <p align="center">
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/fandomforest_accscore.png"> 
 </p>
@@ -92,8 +94,9 @@ There is a bulleted list that describes the balanced accuracy score and the prec
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/fandomforest_report.png"> 
 </p>
 <br>
+The classification report shows that the precision score for identifying high-risk loans is 0.03 and the sensitivity is 0.70.
 
-### Ensamble-EasyEnsambleClassifier
+### MODEL 6 Ensamble-EasyEnsambleClassifier
 **Accuracy Score** of the model <p align="center">
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/easyensamble_accscore.png"> 
 </p>
@@ -104,22 +107,10 @@ There is a bulleted list that describes the balanced accuracy score and the prec
     <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/easyensamble_report.png"> 
 </p>
 <br>
+The classification report shows that the precision score for identifying high-risk loans is 0.09 and the sensitivity is 0.92.
 
 ## Summary
 
-Accuracy is defined as the percentage of correct predictions (True Positive = True Negative/True Positive+ True Negative+ False Positive + False Negative)
+Keeping in mind that the goal is to identify high risk loan applications to protect the financial institution offering the credit, the goal is to find the model that is optimized for sensitivity. A false positive, or a good loan application flagged as possibly defaulting is more acceptable to the bank than false negatives, or a likely-to-default loan application not being detected. The financial institution can then inspect the flagged applications for additional layers of screening before determining whether or not to approve the requested loan. 
 
-Precision is defined as the perentage of positive predictions that are correct(True Positive/(True Positive + False Positive)). It is the measure of how reliable the positive classification is.
-
-Sensitivity(Recall) is defined as the percentage of true positive predictions that are correct (True Positive/(True Positive + False Negative)). It is the measure of the number of observations with a positive classification will be correctly diagnosed.
-
-F1 Score is defined as the harmonic mean that balances the precision and sensitivity F1 = 2(precision * sensitivity)/ (precision + sensitivity)
-
-The analysis show that the precision for the high-risk loans were low for all of the models. The sensitivity(recall) for the high-risk loans was different among all of the models. In some cases it was either the model was overfitted or underfitted.
-
-The ClusterCentroid was an example where the high-risk loans underfitted, there is a huge spread in the sensitivity between high and low-risk loans and will have poor results as it does have the correct results or new data cannot be analyed by the model as features are not selected appropriately and only 54% was the balanced accuracy.
-
-Naive Random OverSampling and SMOTEENN models was an example where the high-risk loans were overfitted, it is a possibility that some results or new data may not be picked up in the model. The machine memorized the algorithms, it appears there were more true negatives in the array, and only 66%, and 64% balanced accuracy, respectively.
-
-Recommendation
-Easy Ensemble Ada Boost Classifier model had the best accuracy of 93.17% which means the algorithm was just right as well as the sensitivity between high and low-risk loans. The spread was minimal, the F1 Score was also the highest. The bias in this model was also reduced, so all data existing and new was analyzed, which had a better result or outcome.
+The model with the highest sensitivity, the EasyEnsambleClassifier, has a recall of 92%. This is far more sensitive than any of the other models. However, it has a very low precision score of 0.09, which means that many of the low risk credit applications are flagged as high-risk. A consequence of this model's use would be the bank missing the opportunity to earn revenue on those low risk loans if it is the only metric used to detirmine whether or not the financial institution approves a loan application.
