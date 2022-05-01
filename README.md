@@ -46,7 +46,7 @@ There is a bulleted list that describes the balanced accuracy score and the prec
 
 ### Oversampling-SMOTE
 **Accuracy Score** of the model <p align="center">
-    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/smote_accscore.png"> 
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/smote_accuscore.png"> 
 </p>
 
 <br>
