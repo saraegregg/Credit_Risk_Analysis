@@ -101,7 +101,7 @@ There is a bulleted list that describes the balanced accuracy score and the prec
 <br>
 
 **Classification Report** of the model <p align="center">
-    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/esayensamble_report.png"> 
+    <img src="https://github.com/saraegregg/Mod17_Credit_Risk_Analysis/blob/main/images/easyensamble_report.png"> 
 </p>
 <br>
 
